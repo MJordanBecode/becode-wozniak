@@ -6,12 +6,11 @@ function factorial(n) {
     }
     let result = 1;
     for (let i = 1; i <= n; i++) {
-        result *= i;  // Multiplie chaque nombre de 1 à n
+        result *= i; 
     }
     return result;
 
 }
 
 let FACTORIAL = Number(prompt("Select a factorial number : "));
-// console.log(FACTORIAL)
 console.log(factorial(FACTORIAL));
