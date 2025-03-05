@@ -7,6 +7,10 @@ class Person{
     setPresenter(){
         console.log(`Bonjour, je m'appelle ${this.Name} et j'ai ${this.Age} ! `)
     }
+
+    get Age(){
+        return this.Age;
+    }
 }
 
 
