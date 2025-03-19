@@ -1,0 +1,157 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0e0e0;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color : red;
+}
+
+h2 {
+    color: #34495e;
+    transition: transform 0.3s;
+}
+
+h2:hover {
+    transform: scale(1.05);
+}
+
+/* Styles pour les inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #34495e;
+    outline: none;
+}
+
+/* Animation for the firstname display */
+@keyframes slideFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  #display-firstname {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden;
+  }
+  
+  #display-firstname:not(:empty) {
+    animation: slideFromLeft 0.5s ease-out forwards;
+    border-bottom: 2px solid #3498db;
+  }
+
+
+
+/* Section cachée */
+#a-hard-truth {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(52, 73, 94, 0.1);
+    border-left: 4px solid #34495e;
+    font-style: italic;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+/* Vérification du mot de passe */
+input[type="password"] {
+    border: 2px solid #ddd;
+}
+
+input[type="password"].error {
+    border-color: red;
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Sélecteur de mode */
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+select:hover {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Bouton Submit */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #34495e;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #2c3e50;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Pied de page */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #222;
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+

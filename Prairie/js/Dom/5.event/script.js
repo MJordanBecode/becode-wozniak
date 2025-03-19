@@ -51,7 +51,7 @@ let isColorChanged = false;  // Variable pour suivre l'état de la couleur
 // Fonction pour changer la couleur de fond avec la barre d'espace
 function changeColorWithSpaceBarKey() {
   document.addEventListener('keydown', function(event) {
-    if (event.key === ' ') {
+        if (event.key === ' ') {
       if (isColorChanged) {
         // Si la couleur a déjà été changée, on remet la couleur de fond à "none"
         selectBody.style.backgroundColor = '';
