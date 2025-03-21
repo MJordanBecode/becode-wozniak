@@ -1,0 +1,117 @@
+
+#container-all-game{ /*css pour le container qui contient tout */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-image: url('../images/background/3d-cartoon-math-objects-character.jpg');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    margin-top: 7%;
+    padding: 8%;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.flex-element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.redim-img{ /*redimeentionner les images de la navbar*/
+    width: 25px;
+}
+
+#container-game{
+    display: grid ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 35px;
+}
+
+
+.style-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* .container-div-img{
+    overflow: hidden;
+} */
+.redim-image-monster{
+    width: 55px;
+    animation: upMonster 1s ease 1s 1 normal both;
+}
+
+.container_button_game{
+    display: flex;
+    margin-top: 2%;
+    justify-content: space-around;
+    
+}
+@keyframes upMonster {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
