@@ -1,0 +1,235 @@
+.container-spirit{
+    background-color: rgb(238, 233, 235);
+    margin-top: 44%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 5%;
+    box-shadow: 10px 0 15px rgba(71, 68, 68, 0.9);
+    border: solid 0.3px rgb(187, 173, 173);
+}
+
+.container-spirit {
+  background-color: rgb(238, 233, 235);
+  margin-top: 44%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 5%;
+  box-shadow: 10px 0 15px rgba(71, 68, 68, 0.9);
+  border: solid 0.3px rgb(187, 173, 173);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.container-spirit::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+      0deg, 
+      transparent, 
+      transparent 30%, 
+      rgba(0, 255, 255, 0.3)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.container-spirit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(85, 138, 207, 0.5);
+}
+
+.container-spirit:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+.redim-size{
+  padding: 4px;
+}
+.blockquote-container{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.quote-container{
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-container > .container-the-quote{
+
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.quote-container > div {
+  gap: 2%;
+  display: flex
+;
+}
+.container-the-quote > .the-quote {
+  text-align: center;
+  margin-top: 3%;
+}
+.container-photo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    background-color: rgb(209, 200, 216);
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    border-radius: 5%;
+}
+
+
+#image-spirit{
+    border-radius: 50%;
+    width: 100px; /* ou une autre valeur fixe */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photo{
+    display: flex;
+    justify-content: center;
+    
+}
+.quote::before{
+  content: "“"; /* Guillemets stylisés */
+  font-size: 2em; /* Taille plus grande */
+  color: lightgray; /* Couleur similaire à l'image */
+  font-weight: bold;
+}
+
+
+#author{
+    text-decoration: none;
+    font-style: normal;
+    color: #ffffff;
+}
+
+.number-quote{
+  text-align: center;
+  color: #ffffff;
+}
+
+address > p{
+  font-style: normal;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-spirit {
+      background-color: rgb(238, 233, 235);
+      margin: 5% auto; /* Centre l'élément et réduit la marge */
+      width: 60%; /* Ajuste la largeur */
+      border-radius: 20px;
+      box-shadow: 10px 10px 30px rgba(71, 68, 68, 0.5);
+      border: solid 0.3px rgb(187, 173, 173);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease;
+  }
+
+  .container-spirit::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+          0deg, 
+          transparent, 
+          transparent 30%, 
+          rgba(0, 255, 255, 0.3)
+      );
+      transform: rotate(-45deg);
+      transition: all 0.5s ease;
+      opacity: 0;
+  }
+
+  .container-spirit:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(85, 138, 207, 0.6);
+  }
+
+  .container-spirit:hover::before {
+      opacity: 1;
+      transform: rotate(-45deg) translateY(100%);
+  }
+
+  .container-photo {
+      background-color: rgb(209, 200, 216);
+      width: 50%; /* Ajuste la taille */
+      margin: 3% auto;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .container-photo:hover {
+      box-shadow: 5px 5px 20px rgba(85, 138, 207, 0.5);
+      transform: scale(1.03);
+  }
+
+  #image-spirit {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+  }
+
+  .quote-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .container-the-quote {
+      font-size: 1.8em;
+      font-style: italic;
+  }
+
+  #author {
+      font-size: 1.2em;
+      color: rgb(50, 50, 50);
+  }
+
+  .number-quote {
+      font-size: 1.1em;
+      color: gray;
+  }
+
+  .container-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #changePersonnality{
+    background-color: rgb(208, 218, 163);
+    padding: 1%;
+    border: none;
+    border-radius: 15px;
+  }
+
+  #changePersonnality:hover{
+    border: solid 1px rgb(97, 102, 77);
+  }
+}
+

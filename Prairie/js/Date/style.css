@@ -1,0 +1,68 @@
+/* filepath: /home/jordan/Becode/becode-wozniak/Prairie/js/Date/style.css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14%;
+    margin-left: 32%;
+    width: 30%;
+    border-radius: 15%;
+    text-align: center;
+}
+.container-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20%;
+    margin-left: 45%;
+    width: 120px;
+    background-color: #f1f1f1;
+    border-radius: 15%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container{
+    display: contents;
+}
+.day {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #af3738;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.Number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #555;
+}
+
+.Month {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.Year{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #af3738;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 0 0  10px 10px;
+}
