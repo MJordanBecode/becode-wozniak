@@ -270,3 +270,118 @@ INNER JOIN transport_campany ON transport.company_id = transport_campany.company
   INNER JOIN reservation ON client.id_client = reservation.reservation_id
   INNER JOIN payement ON reservation.reservation_id = payement.payement_id
   ;
+-- Transport information :
+SELECT 
+  travel.travel_id,
+  travel.destination,
+  travel.limit_place,
+  travel.total_inscription,
+  transport.transport_id,
+  transport.number_place,
+  transport_campany.company_name,
+  transport_campany.company_type
+  FROM transport
+  INNER JOIN transport_campany ON transport.company_id = transport_campany.company_id
+  INNER JOIN travel ON transport.transport_id = travel.transport_id 
+  ;
+
+  -- Consulter les informations d'une entreprise de transport + services associés
+  SELECT transport_campany.company_name,
+  transport_campany.company_type,
+  transport.transport_id,
+  transport.number_place
+   FROM transport
+   INNER JOIN transport_campany ON transport.company_id = transport_campany.company_id;
+
+  -- 3.3 
+    -- modifier client
+       UPDATE client
+        SET firstName = 'Jordan',
+         lastName = 'Masy', 
+         email = 'masyjordan@gmail.com'
+       WHERE id_client = 2 
+       
+    -- reservation : 
+      UPDATE reservation 
+        SET status = 1
+      WHERE reservation_id = 2;
+
+    -- voyage (prix, nombre de places disponible)
+      UPDATE travel
+        SET limit_place = 150, 
+        total_inscription = 148
+        WHERE travel_id = 1;
+  -- 3.4 
+    -- supprimer une réservation + gestions des contraintes si nécessaires 
+      DELETE FROM reservation
+      WHERE reservation_id = 2;
+
+      -- supprimer un mode de paiement
+      DELETE FROM payement
+      WHERE payement_type = 'Chèque';
+      -- supprimer un transport qui n'est plus disponible
+        -- drop de la contrainte FK pour lui rajouter le ON DELETE CASCADE
+        ALTER TABLE transport
+        DROP FOREIGN KEY FK_transport_campany_TO_transport;
+
+        ALTER TABLE transport
+        ADD CONSTRAINT FK_transport_campany_TO_transport
+        FOREIGN KEY (company_id)
+        REFERENCES transport_campany (company_id)
+        ON DELETE CASCADE;
+
+
+-- 4.0 
+-- 4.1
+/*
+Exercice 1 : Afficher toutes les sociétés qui proposent des avions
+📌 Objectif : Trouver les entreprises (company) qui ont au moins un transport de type Avion.
+*/
+SELECT transport.number_place, 
+transport.transport_id,
+transport_campany.company_name,
+transport_campany.company_type
+FROM transport_campany
+INNER JOIN transport ON transport.transport_id = transport_campany.company_id
+WHERE company_type = 'Avion';
+
+/*
+Exercice 2 : Lister les transports avec leur société
+📌 Objectif : Afficher tous les transports (transport), en affichant le nom de la société correspondante.
+*/
+SELECT  
+transport_campany.company_name,
+transport_campany.company_type
+FROM transport_campany
+INNER JOIN transport ON transport.transport_id = transport_campany.company_id;
+
+/*
+ Exercice 3 : Trouver les transports ayant plus de 200 places
+📌 Objectif : Afficher tous les transports qui ont plus de 200 places (TotalSeats).
+*/
+SELECT transport.number_place, 
+transport.transport_id,
+transport_campany.company_name,
+transport_campany.company_type
+FROM transport_campany
+INNER JOIN transport ON transport.transport_id = transport_campany.company_id
+WHERE number_place > 200;
+/*
+Exercice 4 : Afficher les hébergements et leur type de contact principal
+📌 Objectif : Associer les hébergements (hebergement) avec le type de contact principal
+*/
+
+/* 
+Exercice 5 : Trouver les contacts des hébergements en Suisse
+📌 Objectif : Afficher les contacts (contact) associés à un hébergement situé en Suisse.e).
+*/
+
+/* 
+Exercice 6 : Créer un voyage en Belgique (3 jours à Plopsaland) avec un nombre limité de 50 places.
+📌 Objectif : Créer un voyage en Belgique, Trouver le moyen de transport, l'herbergement et le contact.
+*/
+
+/* 
+Exercice 7 : Ajouter un client à ce voyage
+📌 Objectif : Ajouter plusieurs clients, payment ....
+*/
